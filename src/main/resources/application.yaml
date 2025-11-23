@@ -1,0 +1,39 @@
+springdoc:
+  api-docs:
+    enabled: true
+
+info:
+  app:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+
+spring:
+  application:
+    name: proxy-whatsapp
+
+whatsapp:
+  wppconnect:
+    enabled: ${WPP_CONNECT_ENABLED:false}
+    api-url: ${WPP_CONNECT_API_URL}
+    session: ${WPP_CONNECT_SESSION}
+    secretkey: ${WPP_CONNECT_SECRET_KEY}
+  evolution-api:
+    enabled: ${EVOLUTION_API_ENABLED:false}
+    api-url: ${EVOLUTION_API_URL}
+    instance: ${EVOLUTION_API_INSTANCE}
+    api-key: ${EVOLUTION_API_KEY}
+  cloud-api: 
+    enabled: ${WHATSAPP_ENABLED:false}
+    api-url: ${WHATSAPP_API_URL}
+    token: ${WHATSAPP_TOKEN}
+    phone-number-id: ${WHATSAPP_PHONE_NUMBER_ID}
+  whatmsg:
+    enabled: ${WHAT_MSG_ENABLED:false}
+    mocked: false
+    api-url: ${WHAT_MSG_API_URL:https://api.whatmsg.com}
+    api-key: ${WHAT_MSG_API_KEY:''}
+
+logging:
+  level:
+    '[org.springframework.security]': error
